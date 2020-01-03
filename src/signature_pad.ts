@@ -272,6 +272,9 @@ export default class SignaturePad {
   }
 
   private _strokeUpdate(event: MouseEvent | Touch): void {
+    if (!this._data || !this._data.length) {
+      return;
+    }    
     const x = event.clientX;
     const y = event.clientY;
 
